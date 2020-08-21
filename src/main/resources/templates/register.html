@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+    <title>Register</title>
+</head>
+<body>
+
+<!--th:object="${userForm}"
+th:field="*{username}
+有保存輸入資訊的效果，資訊錯誤時return回來
+原本輸入的還在
+
+
+****
+th:errors 不是  th:error
+-->
+
+<div class="container" style="max-width:600px;margin-top: 50px">
+    <h3 class="page-header">Register</h3>
+    <div class="well">
+        <form action="/register" th:object="${userForm}" method="post">
+            <div class="form-group">
+                <label for="usernameId">UserName</label>
+                <input type="text" name="username" id="usernameId" class="form-control" th:field="*{username}">
+                <p class="form-control-static text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name can't empty</p>
+            </div>
+            <div class="form-group">
+                <label for="passwordId">PassWord</label>
+                <input type="password" name="password" id="passwordId" class="form-control" th:field="*{password}">
+                <p class="form-control-static text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+            </div>
+            <div class="form-group">
+                <label for="confirmPasswordId">ConfirmPassWord</label>
+                <input type="password" name="confirmPassword" id="confirmPasswordId" class="form-control" th:field="*{confirmPassword}">
+                <p class="form-control-static text-danger" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}">1111</p>
+            </div>
+            <div class="form-group">
+                <label for="emailId">Email</label>
+                <input type="text" name="email" id="emailId" class="form-control" th:field="*{email}">
+                <p class="form-control-static text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email can't empty</p>
+            </div>
+            <div class="form-group">
+                <label for="phoneId">Phone</label>
+                <input type="text" name="phone" id="phoneId" class="form-control" th:field="*{phone}">
+                <p class="form-control-static text-danger" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">phone can't empty</p>
+            </div>
+            <p>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </p>
+        </form>
+    </div>
+</div>
+<script src="../static/js/jquery-3.5.0.min.js" th:src="@{/js/jquery-3.5.0.min.js}"></script>
+<script src="../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+
+</body>
+</html>

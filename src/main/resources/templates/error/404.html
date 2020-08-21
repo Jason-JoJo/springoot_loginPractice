@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+    <title>404</title>
+</head>
+<body>
+    <div class="container" style="max-width: 600 px; margin-top: 50px;">
+        <div class="jumbotron">
+            <h2>404</h2>
+            <p><code th:text="${#httpServletRequest.getAttribute('javax.servlet.error.request_uri')}"></code> Not Exit</p>
+        </div>
+
+    </div>
+</body>
+</html>

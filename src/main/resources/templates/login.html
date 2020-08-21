@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+    <title>Login</title>
+</head>
+<body>
+
+<div class="container" style="max-width:600px;margin-top: 50px">
+    <h3 class="page-header">Login</h3>
+    <div class="well">
+        <form action="/welcome" method="post">
+            <div class="form-group">
+                <label for="usernameId">UserName</label>
+                <input type="text" name="username" id="usernameId" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="passwordId">PassWord</label>
+                <input type="password" name="password" id="passwordId" class="form-control">
+            </div>
+            <p>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </p>
+        </form>
+    </div>
+</div>
+<script src="../static/js/jquery-3.5.0.min.js" th:src="@{/js/jquery-3.5.0.min.js}"></script>
+<script src="../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+
+</body>
+</html>

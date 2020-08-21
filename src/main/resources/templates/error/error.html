@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+    <title>error</title>
+</head>
+<body>
+<div class="container" style="max-width: 600 px; margin-top: 50px;">
+    <div class="jumbotron">
+        <h2>Error</h2>
+        <p>Server Error</p>
+        <p>url : <code th:text="${url}"></code></p>
+        <p>detail : <code th:text="${exception.message}"></code></p>
+    </div>
+    <!-- -->
+    <div th:utext="'&lt;!--'" th:remove="tag"></div>
+    <div th:utext="'Failed Request URL : ' + ${url}" th:remove="tag"></div>
+    <div th:utext="'Exception message : ' + ${exception.message}" th:remove="tag"></div>
+    <ul th:remove="tag">
+        <li th:each="st : ${exception.stackTrace}" th:remove="tag"><span th:utext="${st}" th:remove="tag"></span></li>
+    </ul>
+    <div th:utext="'--&gt;'" th:remove="tag"></div>
+</div>
+</body>
+</html>
